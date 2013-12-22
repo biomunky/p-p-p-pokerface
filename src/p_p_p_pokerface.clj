@@ -26,7 +26,6 @@
 
 ;; A flush is a poker hand such as Q♣ 10♣ 7♣ 6♣ 4♣.
 ;; All five cards are of the same suit, but not in sequence.
-;; missing same suit.
 (defn flush? [hand]
   (let [suits (map suit hand)
         ranks (map rank hand)
