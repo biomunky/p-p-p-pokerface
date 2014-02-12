@@ -30,10 +30,10 @@
   (let [suits (map suit hand)
         ranks (map rank hand)
         freqs (frequencies suits)
-        contiguous-rank (range (apply min ranks) (+ 1 (apply max ranks))) ]
+        contiguous-rank (range (apply min ranks) (+ 1 (apply max ranks)))]
     (and
-      (not= contiguous-rank ranks)
-      (== 5 (apply max (vals freqs))))))
+     (not= contiguous-rank ranks)
+     (== 5 (apply max (vals freqs))))))
 
 (defn full-house? [hand]
   (let [ranks (map rank hand)
@@ -68,8 +68,8 @@
         ace-high (sort (map rank hand))
         ace-low (sort (replace {14 1} (map rank hand)))]
     (and one-suit? is-flush?
-        (or (= ace-high (range (apply min ace-high) (+ 1 (apply max ace-high))))
-            (= ace-low  (range (apply min ace-low)  (+ 1 (apply max ace-low))))))))
+         (or (= ace-high (range (apply min ace-high) (+ 1 (apply max ace-high))))
+             (= ace-low  (range (apply min ace-low)  (+ 1 (apply max ace-low))))))))
 
 
 (defn value [hand]
